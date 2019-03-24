@@ -15,12 +15,12 @@ samples, guidance on mobile development, and a full API reference.
 
 ### CodeLab Part1
 ##### What I'll Learn:
-- How to write a Flutter app that looks natural on both iOS and Android.
-- Basic structure of a Flutter app.
-- Finding and using packages to extend functionality.
-- Using hot reload for a quicker development cycle.
-- How to implement a stateful widget.
-- How to create an infinite, lazily loaded list.
+[x] How to write a Flutter app that looks natural on both iOS and Android.
+[x] Basic structure of a Flutter app.
+[x] Finding and using packages to extend functionality.
+[x] Using hot reload for a quicker development cycle.
+[x] How to implement a stateful widget.
+[x] How to create an infinite, lazily loaded list.
 
 ##### Observations
 - This example creates a Material app. Material is a visual design language that is standard on mobile and the web. Flutter offers a rich set of Material widgets.
@@ -28,4 +28,8 @@ samples, guidance on mobile development, and a full API reference.
 - The app extends StatelessWidget which makes the app itself a widget. In Flutter, almost everything is a widget, including alignment, padding, and layout.
 - The Scaffold widget, from the Material library, provides a default app bar, title, and a body property that holds the widget tree for the home screen. The widget subtree can be quite complex.
 - A widget’s main job is to provide a build() method that describes how to display the widget in terms of other, lower level widgets.
-- The body for this example consists of a Center widget containing a Text child widget. The Center widget aligns its widget subtree to the center of the screen.
+- For example, the body for this example consists of a Center widget containing a Text child widget. The Center widget aligns its widget subtree to the center of the screen.
+- Stateless widgets are immutable, meaning that their properties can’t change — all values are final.
+- Stateful widgets maintain state that might change during the lifetime of the widget. Implementing a stateful widget requires at least two classes: 
+  1. a StatefulWidget class that creates an instance of 
+  2. a State class.

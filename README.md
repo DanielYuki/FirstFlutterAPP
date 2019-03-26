@@ -13,16 +13,19 @@ For help getting started with Flutter, view our
 [online documentation](https://flutter.io/docs), which offers tutorials, 
 samples, guidance on mobile development, and a full API reference.
 
-### CodeLab Part1
-##### What I'll Learn:
+### CodeLab Part 1 & 2
+#### What I'm Learning:
 - [x] How to write a Flutter app that looks natural on both iOS and Android.
 - [x] Basic structure of a Flutter app.
 - [x] Finding and using packages to extend functionality.
 - [x] Using hot reload for a quicker development cycle.
 - [x] How to implement a stateful widget.
 - [x] How to create an infinite, lazily loaded list.
+- [x] How to add interactivity to a stateful widget.
+- [x] How to create and navigate to a second screen.
+- [x] How to change the look of an app using themes.
 
-##### Observations
+#### Observations
 - This example creates a Material app. Material is a visual design language that is standard on mobile and the web. Flutter offers a rich set of Material widgets.
 - The main() method uses arrow (=>) notation. Use arrow notation for one-line functions or methods.
 - The app extends StatelessWidget which makes the app itself a widget. In Flutter, almost everything is a widget, including alignment, padding, and layout.
@@ -31,5 +34,6 @@ samples, guidance on mobile development, and a full API reference.
 - For example, the body for this example consists of a Center widget containing a Text child widget. The Center widget aligns its widget subtree to the center of the screen.
 - Stateless widgets are immutable, meaning that their properties can’t change — all values are final.
 - Stateful widgets maintain state that might change during the lifetime of the widget. Implementing a stateful widget requires at least two classes: 
-  - 1) a StatefulWidget class that creates an instance of 
-  - 2) a State class.
+  - a StatefulWidget class that creates an instance of 
+  - a State class. 
+- calling setState() triggers a call to the build() method for the State object, resulting in an update to the UI.

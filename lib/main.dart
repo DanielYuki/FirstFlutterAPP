@@ -22,6 +22,8 @@ class RandomWordsState extends State<RandomWords> {
   final Set<WordPair> _saved = new Set<WordPair>();
   final _biggerFonts = const TextStyle(fontSize: 18.0);
 
+  int gambiarra = 0;
+
   @override
   Widget build(BuildContext context) {
     void _pushSaved() {
@@ -39,12 +41,23 @@ class RandomWordsState extends State<RandomWords> {
           context: context,
           tiles: tiles,
         ).toList();
-        return Scaffold(
-          appBar: AppBar(
-            title: const Text('Saved Suggestions'),
-          ),
-          body: ListView(children: divided),
-        );
+        //checks if there's something saved
+        if ( gambiarra > 0 ) {
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Saved Suggestions'),
+            ),
+            body: ListView(children: divided),
+          );
+        }else{
+          return Scaffold(
+            appBar: AppBar(
+              title: const Text('Saved Suggestions'),
+            ),
+            body: 
+              Text('No Saved Suggestions...'),
+          );
+        }
       }));
     }
 
@@ -89,20 +102,22 @@ class RandomWordsState extends State<RandomWords> {
         color: alreadySaved ? Colors.red : null,
       ),
       // calling setState() triggers a call to the build() method for the State object, resulting in an update to the UI.
-      // onTap: () {
-      //   setState(() {
-      //     if (alreadySaved) {
-      //       _saved.remove(pair);
-      //     } else {
-      //       _saved.add(pair);
-      //     }
-      //   });
-      // },
       onTap: () {
         setState(() {
-          alreadySaved ? _saved.remove(pair) : _saved.add(pair);
+          if (alreadySaved) {
+            _saved.remove(pair);
+            gambiarra--;
+          } else {
+            _saved.add(pair);
+            gambiarra++;
+          }
         });
       },
+      // onTap: () {
+      //   setState(() {
+      //     alreadySaved ? _saved.remove(pair) : _saved.add(pair);
+      //   });
+      // },
     );
   }
 }
